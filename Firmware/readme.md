@@ -6,9 +6,9 @@ License: The firmware in this directory is distributed according to the notifica
 **V0:**
 
 1. RMP220 with 48V battery firmware.
-2. If you are using Nvidia Cater, the firmware is Carter v2.3.
+2. If you are using Nvidia Carter, the firmware is Carter v2.3.
 
 **V1：**
 1. RMP220 with 36V battery firmware.
-2. If you are using Nvidia Cater, the firmware is Carter v2.4.
+2. If you are using Nvidia Carter, the firmware is Carter v2.4.
 
