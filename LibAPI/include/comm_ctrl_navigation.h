@@ -1,3 +1,40 @@
+/**
+  ************************************* Copyright ****************************** 
+  *
+  *                 (C) Copyright 2023,Segway-Ninebot,China,beijing
+  *                            All Rights Reserved
+  *                              
+  *    
+  * FileName   : comm_ctrl_navigation.h   
+  * Version    : v1.0
+  * Author     : SegwayRobotics Team
+  * Date       : 2023-08-01 
+  * Description:  
+  *   1. Dynamic link library interface.
+  *   2. Please refer to the official manual for details.
+  * License:
+  *   Copyright [2023] [Segway Robotics]
+  *
+  *   Licensed under the Apache License, Version 2.0 (the "License");
+  *	  you may not use this file except in compliance with the License.
+  *	  You may obtain a copy of the License at
+  *
+  *	  	http://www.apache.org/licenses/LICENSE-2.0
+  *
+  *	  Unless required by applicable law or agreed to in writing, software
+  *	  distributed under the License is distributed on an "AS IS" BASIS,
+  *	  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  *	  See the License for the specific language governing permissions and
+  *	  limitations under the License.
+  *		
+  * https://robotics.segway.com
+  * http://www.segwayrobotics.com
+  * https://www.ninebot.com
+  *
+  ******************************************************************************
+ */
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -16,8 +53,8 @@ extern "C" {
 #define Chassis_Data_Odom_Euler_xy		4
 #define Chassis_Data_Odom_Euler_z		5
 #define Chassis_Data_Odom_Linevel_xy	6
-#define Chassis_Data_Imu_Gyr            7	//IMU Gyroscope data 陀螺仪数据上报
-#define Chassis_Data_Imu_Acc            8	//IMU Accelerometer data 加速度计数据上�?
+#define Chassis_Data_Imu_Gyr            7	//IMU Gyroscope data
+#define Chassis_Data_Imu_Acc            8	//IMU Accelerometer data
 
 //-----------------------Event---------------------------------------------
 #define ChassisBootReadyEvent  		1	// Chassis central control boot OK
@@ -75,7 +112,7 @@ typedef struct {
 
 typedef enum {
     Host = 1,
-    Central = 2, //底盘只连中控�?
+    Central = 2,
     Motor	= 3,
     BMS		= 4
 }board_name_e;
