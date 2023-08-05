@@ -1,4 +1,4 @@
-<img src="./Pictures/segway-robotics_logo.png" width="25%">
+<img src="./Pictures/segway-robotics_logo.png" width="25%" align=center>
 
 # RMP220-SDK
 
