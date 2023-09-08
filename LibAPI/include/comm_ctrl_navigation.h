@@ -1,40 +1,3 @@
-/**
-  ************************************* Copyright ****************************** 
-  *
-  *                 (C) Copyright 2023,Segway-Ninebot,China,beijing
-  *                            All Rights Reserved
-  *                              
-  *    
-  * FileName   : comm_ctrl_navigation.h   
-  * Version    : v1.0
-  * Author     : SegwayRobotics Team
-  * Date       : 2023-08-01 
-  * Description:  
-  *   1. Dynamic link library interface.
-  *   2. Please refer to the official manual for details.
-  * License:
-  *   Copyright [2023] [Segway Robotics]
-  *
-  *   Licensed under the Apache License, Version 2.0 (the "License");
-  *   you may not use this file except in compliance with the License.
-  *   You may obtain a copy of the License at
-  *
-  *  	http://www.apache.org/licenses/LICENSE-2.0
-  *
-  *   Unless required by applicable law or agreed to in writing, software
-  *   distributed under the License is distributed on an "AS IS" BASIS,
-  *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-  *   See the License for the specific language governing permissions and
-  *   limitations under the License.
-  *		
-  * https://robotics.segway.com
-  * http://www.segwayrobotics.com
-  * https://www.ninebot.com
-  *
-  ******************************************************************************
- */
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -53,8 +16,8 @@ extern "C" {
 #define Chassis_Data_Odom_Euler_xy		4
 #define Chassis_Data_Odom_Euler_z		5
 #define Chassis_Data_Odom_Linevel_xy	6
-#define Chassis_Data_Imu_Gyr            7	//IMU Gyroscope data
-#define Chassis_Data_Imu_Acc            8	//IMU Accelerometer data
+#define Chassis_Data_Imu_Gyr            7	//IMU Gyroscope data 陀螺仪数据上报
+#define Chassis_Data_Imu_Acc            8	//IMU Accelerometer data 加速度计数据上�?
 
 //-----------------------Event---------------------------------------------
 #define ChassisBootReadyEvent  		1	// Chassis central control boot OK
@@ -192,6 +155,8 @@ int16_t getHostIapErrorCode(void);
 int16_t get_chassis_hang_mode(void);//Get chassis hang_mode; 1: in Hang_mode; 0: not in Hand_mode.
 int16_t get_charge_mos_ctrl_status(void);//Get the status of switch for charging MOS on the central board, charging:1; no charge:0
 uint16_t get_low_power_shutdown_threshold(void);//Get the SOC threshold of a low-power shutdown of the central board
+uint16_t get_charge_mode_status(void);//Get the charge mode. 0:no charge;1:line charge;2:dock charge;
+uint16_t get_charge_connect_status(void);//Get the charge connect. 0:no connect;1:charge connect
 
 
 void 	set_cmd_vel(double linear_x,double angular_z);//Set the linear and angular speeds of the vehicle: m/s ; rad/s.
