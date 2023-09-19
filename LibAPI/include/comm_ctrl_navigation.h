@@ -140,7 +140,6 @@ uint16_t get_chassis_mode(void);//Gets chassis mode
 int16_t  get_ctrl_cmd_src(void); // Get the source of the control command 
 int32_t  get_vehicle_meter(void); //Get the total mileage meters of the chssis
 uint16_t get_host_version(void);
-uint16_t get_host_patch_version(void);
 uint16_t get_chassis_central_version(void);
 uint16_t get_chassis_motor_version(void);
 int16_t  get_line_forward_max_vel_fb(void);
