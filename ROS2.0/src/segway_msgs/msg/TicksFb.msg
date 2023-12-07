@@ -1,0 +1,3 @@
+int32 l_ticks
+int32 r_ticks
+uint64 ticks_timestamp

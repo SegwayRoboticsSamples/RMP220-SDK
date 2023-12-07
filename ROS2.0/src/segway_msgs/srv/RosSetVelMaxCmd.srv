@@ -1,0 +1,5 @@
+float64  ros_set_forward_max_vel  
+float64  ros_set_backward_max_vel  
+float64  ros_set_angular_max_vel
+---
+uint8    chassis_set_max_vel_result

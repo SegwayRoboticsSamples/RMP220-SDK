@@ -1,0 +1,3 @@
+bool   ros_get_chassis_charge_ctrl_status
+---
+int16   chassis_charge_ctrl_status

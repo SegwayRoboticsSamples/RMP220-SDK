@@ -1,0 +1,3 @@
+bool   ros_set_chassis_poweroff_cmd
+---
+uint8   chassis_set_poweroff_result

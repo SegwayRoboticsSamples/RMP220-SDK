@@ -1,0 +1,65 @@
+<launch>
+  <param name="use_sim_time" value="false" />
+
+  <!--<include file="$(find ninebot_gx)/launch/ninebot_gx_configuration.launch" />-->
+
+  <!-- Run the map server -->
+  <!--<node name="map_server" pkg="map_server" type="map_server" args="$(find ninebot_gx)/maps/mymap.pgm my_map_resolution"/>-->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find ninebot_gx)/maps/mymap.yaml"/>
+
+  <!--move base-->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find ninebot_gx)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find ninebot_gx)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find ninebot_gx)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find ninebot_gx)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find ninebot_gx)/param/base_local_planner_params.yaml" command="load" />
+  </node>
+
+   <!--启动 AMCL 节点 -->
+  <node pkg="amcl" type="amcl" name="amcl" clear_params="true">
+    <param name="use_map_topic" value="false"/>
+    <!-- Publish scans from best pose at a max of 10 Hz -->
+    <param name="odom_model_type" value="diff"/>
+    <param name="odom_alpha5" value="0.1"/>
+    <param name="gui_publish_rate" value="10.0"/>
+    <param name="laser_max_beams" value="60"/>
+    <param name="laser_max_range" value="12.0"/>
+    <param name="min_particles" value="500"/>
+    <param name="max_particles" value="2000"/>
+    <param name="kld_err" value="0.05"/>
+    <param name="kld_z" value="0.99"/>
+    <param name="odom_alpha1" value="0.2"/>
+    <param name="odom_alpha2" value="0.2"/>
+    <!-- translation std dev, m -->
+    <param name="odom_alpha3" value="0.2"/>
+    <param name="odom_alpha4" value="0.2"/>
+    <param name="laser_z_hit" value="0.5"/>
+    <param name="laser_z_short" value="0.05"/>
+    <param name="laser_z_max" value="0.05"/>
+    <param name="laser_z_rand" value="0.5"/>
+    <param name="laser_sigma_hit" value="0.2"/>
+    <param name="laser_lambda_short" value="0.1"/>
+    <param name="laser_model_type" value="likelihood_field"/>
+    <!-- <param name="laser_model_type" value="beam"/> -->
+    <param name="laser_likelihood_max_dist" value="2.0"/>
+    <param name="update_min_d" value="0.25"/>
+    <param name="update_min_a" value="0.2"/>
+
+    <param name="odom_frame_id" value="odom"/>
+
+    <param name="resample_interval" value="1"/>
+    <!-- Increase tolerance because the computer can get quite busy -->
+    <param name="transform_tolerance" value="1.0"/>
+    <param name="recovery_alpha_slow" value="0.0"/>
+    <param name="recovery_alpha_fast" value="0.0"/>
+    <!-- scan topic -->
+    <remap from="scan" to="scan"/>
+  </node>
+
+  <!-- TF -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.10 0.0 0.12 3.14 0.0 0.0 base_link laser 100"/>
+  <!-- static_transform_publisher x y z yaw pitch roll frame_id child_frame_id period_in_ms -->  
+  <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0.5 0 0 0 base_link base_footprint 50" />
+
+</launch>

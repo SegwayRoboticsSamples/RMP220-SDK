@@ -1,0 +1,4 @@
+<launch>
+    <node name="SmartCar" pkg="ninebot_gx" type="SmartCar" output="screen"/>
+    <node name="RobotOdoemtry" pkg="ninebot_gx" type="RobotOdoemtry" output="screen"/>
+</launch>

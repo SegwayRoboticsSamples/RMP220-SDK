@@ -1,0 +1,6 @@
+int16  iap_board    #1:iap central board;  2:iap motor board
+---
+int16  iap_result  #3: iap_state_complete; 4: iap_state_fail; 5: iap_state_abort
+int16  error_code  #When iap_result value is 4, this value represents the error code
+---
+int16  iap_percent

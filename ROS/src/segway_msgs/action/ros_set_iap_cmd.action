@@ -1,0 +1,6 @@
+bool   central_board_iap_enable
+---
+int16  iap_result  #3: iap_state_complete; 4: iap_state_fail; 5: iap_state_abort
+int16  error_code  #When iap_result value is 4, this value represents the error code
+---
+int16  iap_percent

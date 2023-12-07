@@ -1,0 +1,3 @@
+bool   ros_set_chassis_charge_ctrl
+---
+uint8   chassis_set_charge_ctrl_result

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <!--start rviz view -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ninebot_gx)/rviz/nav.rviz" />
+
+</launch>

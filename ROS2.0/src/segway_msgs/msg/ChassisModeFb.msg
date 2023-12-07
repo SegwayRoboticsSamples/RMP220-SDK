@@ -1,0 +1,1 @@
+uint16 chassis_mode

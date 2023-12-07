@@ -1,0 +1,3 @@
+bool  ros_set_remove_push_cmd
+---
+uint8  chassis_set_revove_push_result

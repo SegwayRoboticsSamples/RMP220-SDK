@@ -1,0 +1,11 @@
+<launch>
+    <!-- Define laser type-->
+  <arg name="laser_type" default="rplidar" />
+  <!-- laser driver -->
+  <include file="$(find rplidar_ros)/launch/$(arg laser_type).launch" />
+
+  <!-- Robot && Odomtry -->
+  <node name="SmartCar" pkg="segwayrmp" type="SmartCar" output="screen"/>
+  <node name="RobotOdoemtry" pkg="segwayrmp" type="RobotOdoemtry" output="screen"/>
+
+</launch>
