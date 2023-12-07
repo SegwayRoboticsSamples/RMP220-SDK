@@ -1,0 +1,5 @@
+.vscode
+adb
+build
+devel
+.catkin_workspace

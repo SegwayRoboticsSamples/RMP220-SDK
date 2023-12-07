@@ -297,6 +297,8 @@ void Chassis::ros_set_vel_max_cmd_callback(const std::shared_ptr<segway_msgs::sr
 void Chassis::ros_get_low_power_shutdown_threshold_cmd_callback(const std::shared_ptr<segway_msgs::srv::RosGetLowPowerShutdownThresholdCmd::Request> request,
     std::shared_ptr<segway_msgs::srv::RosGetLowPowerShutdownThresholdCmd::Response> response)
 {
+    RCLCPP_INFO(rclcpp::get_logger("SmartCar"), "request: [%d]", request);  //no used
+    
     uint16_t threshold_soc = 0;
     threshold_soc = get_low_power_shutdown_threshold();
     response->chassis_get_soc_threshold_result = threshold_soc;
