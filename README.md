@@ -6,3 +6,5 @@
 
 Segway-Ninebot company gives developers the SDK for the RMP220 product.
 
+For further usage instructions, please refer to the [Wiki](https://github.com/SegwayRoboticsSamples/RMP220-SDK/wiki).
+
